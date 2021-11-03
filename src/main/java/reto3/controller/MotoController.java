@@ -49,7 +49,7 @@ public class MotoController {
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Motorbike update(@RequestBody Motorbike moto){
-        return motoService.update(moto);
+        return motoService.save(moto);
     }
     
     @DeleteMapping("/{id}")
