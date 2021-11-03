@@ -53,6 +53,13 @@ public class CategoryService {
         } else {
             return category;
         }
+    }
 
+    public boolean deleteCategory(int id) {
+        Boolean categBoolean = categoryRepository.findById(id).map(category -> {
+            categoryRepository.delete(category);
+            return true;
+        }).orElse(false);
+        return categBoolean;
     }
 }
